@@ -2,13 +2,16 @@ package main
 
 import (
 	"fmt"
-	"os"
 )
 
 func main() {
-	if len(os.Args) != 2 {
-		os.Exit(0)
-	}
 
-	fmt.Println("Hello", os.Args[1])
+	name := getName()
+	idade := 26
+
+	fmt.Println("Hello", name, idade)
+}
+
+func getName() string {
+	return "John Doe"
 }
