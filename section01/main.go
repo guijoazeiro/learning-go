@@ -12,17 +12,25 @@ type Pessoa struct {
 
 func main() {
 
-	salarios := []int{}
+	salFuncs := make(map[string]int)
+	salFuncs["John"] = 100
+	salFuncs["Jane"] = 200
 
-	// salarios := make([]int, 5)
+	sal, exists := salFuncs["John"]
+	fmt.Println(sal, exists)
+	totalSal := len(salFuncs)
+	fmt.Println(totalSal)
+	// salarios := []int{}
 
-	for i := 0; i < 5; i++ {
-		salarios = append(salarios, 100+i)
-	}
+	// // salarios := make([]int, 5)
 
-	for _, salario := range salarios {
-		fmt.Println(salario)
-	}
+	// for i := 0; i < 5; i++ {
+	// 	salarios = append(salarios, 100+i)
+	// }
+
+	// for _, salario := range salarios {
+	// 	fmt.Println(salario)
+	// }
 
 	// pessoa2 := new(Pessoa)
 	// pessoa2.nome = "John2"
