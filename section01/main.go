@@ -2,15 +2,15 @@ package main
 
 import (
 	"fmt"
+	"gohello/funcionarios"
 )
 
-type Pessoa struct {
-	nome    string
-	idade   int
-	salario int
-}
-
 func main() {
+	pessoa := &funcionarios.Pessoa{
+		nome:    "John",
+		idade:   25,
+		salario: 100,
+	}
 
 	salFuncs := make(map[string]int)
 	salFuncs["John"] = 100
