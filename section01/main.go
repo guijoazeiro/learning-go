@@ -3,22 +3,32 @@ package main
 import (
 	"fmt"
 	"os"
-	"strconv"
 )
 
 func main() {
-	if len(os.Args) != 2 {
-		os.Exit(1)
-	}
-
-	n, err := strconv.Atoi(os.Args[1])
+	file, err := os.Open("file.txt")
 
 	if err != nil {
-		fmt.Println("erro, não é um número valido")
-		os.Exit(1)
+		fmt.Println(err)
+		return
 	}
 
-	fmt.Println("numero convertido", n)
+	defer file.Close()
+
+	// fmt.Println("Hello, World!")
+
+	// if len(os.Args) != 2 {
+	// 	os.Exit(1)
+	// }
+
+	// n, err := strconv.Atoi(os.Args[1])
+
+	// if err != nil {
+	// 	fmt.Println("erro, não é um número valido")
+	// 	os.Exit(1)
+	// }
+
+	// fmt.Println("numero convertido", n)
 
 	/*pessoa := &funcionarios.Pessoa{
 		nome:    "John",
