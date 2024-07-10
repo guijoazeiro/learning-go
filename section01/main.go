@@ -2,11 +2,25 @@ package main
 
 import (
 	"fmt"
-	"gohello/funcionarios"
+	"os"
+	"strconv"
 )
 
 func main() {
-	pessoa := &funcionarios.Pessoa{
+	if len(os.Args) != 2 {
+		os.Exit(1)
+	}
+
+	n, err := strconv.Atoi(os.Args[1])
+
+	if err != nil {
+		fmt.Println("erro, não é um número valido")
+		os.Exit(1)
+	}
+
+	fmt.Println("numero convertido", n)
+
+	/*pessoa := &funcionarios.Pessoa{
 		nome:    "John",
 		idade:   25,
 		salario: 100,
@@ -20,6 +34,7 @@ func main() {
 	fmt.Println(sal, exists)
 	totalSal := len(salFuncs)
 	fmt.Println(totalSal)
+	*/
 	// salarios := []int{}
 
 	// // salarios := make([]int, 5)
@@ -57,18 +72,18 @@ func main() {
 
 }
 
-func setName(name string) {
-	fmt.Println("Hello", name)
-}
+// func setName(name string) {
+// 	fmt.Println("Hello", name)
+// }
 
-func addSalary(valorAtual int, bonus int) (int, int) {
-	return valorAtual + bonus, bonus
-}
+// func addSalary(valorAtual int, bonus int) (int, int) {
+// 	return valorAtual + bonus, bonus
+// }
 
-func (p *Pessoa) addSalaryPessoa(bonus int) {
-	p.salario += bonus
-}
+// func (p *Pessoa) addSalaryPessoa(bonus int) {
+// 	p.salario += bonus
+// }
 
-func getName() string {
-	return "John Doe"
-}
+// func getName() string {
+// 	return "John Doe"
+// }
